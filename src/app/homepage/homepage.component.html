@@ -1,0 +1,18 @@
+<div class="homepage">
+    <div *ngIf="!registerMode" class="presentation">
+        <h1 class="title">MyChat panel</h1>
+        <h3 class="desc">
+            It's page where you can create and manage your own chat! 
+            <br />
+            Click button below chack how it simple!</h3>
+        <button (click)="registerToogle()" class="btn btn-primary registerBtn">
+                Register
+        </button>
+    </div>
+
+
+
+    <div *ngIf="registerMode"  class="registerForm">
+            <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+    </div>
+</div>

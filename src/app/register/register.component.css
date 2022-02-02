@@ -1,0 +1,15 @@
+.register-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.register-title{
+    color: green;
+}
+
+.register-btns{
+    display: flex;
+    justify-content: center;
+}

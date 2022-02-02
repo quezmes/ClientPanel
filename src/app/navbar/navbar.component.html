@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">My chat client panel</a>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+
+              <ul class="navbar-nav me-auto mb-2 mb-md-0" *ngIf="accountService.currentClient$ | async">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#" tabindex="-1" (click)="logout()" aria-disabled="true">Disabled</a>
+                  </li>
+              </ul>
+
+              <form *ngIf="(accountService.currentClient$ | async) === null" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
+                <input class="form-control me-2" 
+                            name="emailOrUserName"
+                            [(ngModel)]="model.emailOrUserName"
+                         type="text" 
+                         placeholder="emailOrUserName" 
+                        aria-label="emailOrUserName">
+                <input class="form-control me-2" 
+                        name="password"
+                        [(ngModel)]="model.password"
+                        type="password" placeholder="Password" aria-label="Password">
+                <button class="btn btn-outline-success" type="submit">Login</button>
+              </form>
+            </div>
+          </div>
+    </div>
+    
+  </nav>
